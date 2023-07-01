@@ -123,7 +123,7 @@ def add_course():
     course_data = request.json
     course_name = course_data.get('course_name')
 
-    existing_data = collection1.find_one({'course_name': course_name})
+    existing_data = collection3.find_one({'course_name': course_name})
     if existing_data:
         return jsonify({'message': 'University already registered'}), 400
 
@@ -152,7 +152,7 @@ def get_all_courses():
 
 @app.route('/courses/<course_name>', methods=['GET'])
 def get_course(course_name):
-    coursename = collection2.find_one({'course_name': course_name})
+    coursename = collection3.find_one({'course_name': course_name})
     if not coursename:
         return jsonify({'message': 'course name not found'}), 404
     return json.dumps(coursename, default=str), 200
