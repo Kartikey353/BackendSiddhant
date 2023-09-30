@@ -17,7 +17,7 @@ class CustomJSONEncoder(json.JSONEncoder):
 app = Flask(__name__)
 app.json_encoder = CustomJSONEncoder
 CORS(app) 
-uri = "mongodb+srv://kartikey:kartikey@cluster1.5mcqziq.mongodb.net/?retryWrites=true&w=majority"
+uri = "mongodb+srv://kartikey:r3D7rYVAmuLjpX7O@cluster1.5mcqziq.mongodb.net/?retryWrites=true&w=majority"
 client = MongoClient(uri) 
 env_config = os.getenv("PROD_APP_SETTINGS", "config.DevelopmentConfig")
 app.config.from_object(env_config)
